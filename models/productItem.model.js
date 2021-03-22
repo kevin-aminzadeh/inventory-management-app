@@ -24,7 +24,7 @@ ProductItem.init(
     },
     dateCreated: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
     },
     dateDeleted: {
       type: DataTypes.DATE,
