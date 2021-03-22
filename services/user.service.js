@@ -9,3 +9,20 @@ exports.getUsers = async (query, page, limit) => {
     throw Error(err);
   }
 };
+exports.updateUser = async (query, userId) => {
+  try {
+    const userData = await User.findByPk(userId);
+    if(userData){
+      try{
+        User.update(query,{
+          where: {id: `${userId}`},
+        });
+      }catch(err){
+        throw Error(err);
+      };
+    };
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};
