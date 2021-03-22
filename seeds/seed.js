@@ -5,6 +5,7 @@ const {
   BrandModel,
   CategoryModel,
   ProductModel,
+  ProductItemModel,
 } = require('../models');
 
 const userData = require('./userData.json');
@@ -12,6 +13,7 @@ const roleData = require('./roleData.json');
 const brandData = require('./brandData.json');
 const categoryData = require('./categoryData.json');
 const productData = require('./productData.json');
+const productItemData = require('./productItemData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -34,13 +36,18 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // Seed the Category table
+  // Seed the category table
   await CategoryModel.bulkCreate(categoryData, {
     individualHooks: true,
     returning: true,
   });
-
+  // Seed the product table
   await ProductModel.bulkCreate(productData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await ProductItemModel.bulkCreate(productItemData, {
     individualHooks: true,
     returning: true,
   });
