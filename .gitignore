@@ -2,7 +2,6 @@ node_modules
 .vscode
 ui
 .env
-.env.EXAMPLE
 .DS_Store
 *.log
 
