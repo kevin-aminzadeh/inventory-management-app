@@ -5,6 +5,8 @@ const ProductItemModel = require('./productItem.model');
 const BrandModel = require('./brand.model');
 const CategoryModel = require('./category.model');
 
+ProductItemModel.belongsTo(ProductModel, { foreignKey: 'itemID' });
+ProductModel.hasMany(ProductItemModel, { foreignKey: 'itemID' });
 module.exports = {
   UserModel,
   RoleModel,
