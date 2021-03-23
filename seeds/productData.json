@@ -7,6 +7,38 @@
   "salePrice": 300.00
 },
 {
+  "sku": "XXXX0000001",
+  "name": "Iphone 12 Pro",
+  "categoryID": 2,
+  "costPrice": 200.00,
+  "brandID": 1,
+  "salePrice": 300.00
+},
+{
+  "sku": "XXXX0000001",
+  "name": "Iphone 12 Pro",
+  "categoryID": 2,
+  "costPrice": 200.00,
+  "brandID": 1,
+  "salePrice": 300.00
+},
+{
+  "sku": "XXXX0000001",
+  "name": "Iphone 12 Pro",
+  "categoryID": 2,
+  "costPrice": 200.00,
+  "brandID": 1,
+  "salePrice": 300.00
+},
+{
+  "sku": "XXXX0000001",
+  "name": "Iphone 12 Pro",
+  "categoryID": 2,
+  "costPrice": 200.00,
+  "brandID": 1,
+  "salePrice": 300.00
+},
+{
   "sku": "XXXX0000002",
   "name": "Iphone 12 Pro Max",
   "categoryID": 2,
