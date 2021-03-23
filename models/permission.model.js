@@ -15,6 +15,24 @@ Permission.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    resource_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: false,
+      references: {
+        model: 'resource',
+        key: 'id',
+      },
+    },
+        operation_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: false,
+      references: {
+        model: 'operation',
+        key: 'id',
+      },
+
   },
   {
     sequelize,

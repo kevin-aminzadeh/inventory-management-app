@@ -1,8 +1,9 @@
 const UserModel = require('./user.model');
 const RoleModel = require('./role.model');
-const PermissionModel = require('./permission.model');
 const ResourceModel = require('./resource.model');
-const ResourcePermissionModel = require('./resourcePermission.model');
+const OperationModel = require('./operation.model');
+const PermissionModel = require('./permission.model');
+
 
 const RolePermissionModel = require('./rolePermission.model');
 
@@ -37,22 +38,22 @@ PermissionModel.hasMany(RolePermissionModel, {
   foreignKey: 'permission_id',
 });
 
-// Define Permission and ResourcePermission Model Relationship
-ResourcePermissionModel.belongsTo(PermissionModel, {
-  foreignKey: 'permission_id',
-});
-
-PermissionModel.hasMany(ResourcePermissionModel, {
-  foreignKey: 'permission_id',
-});
-
-// Define Resource and ResourcePermission Model Relationship
-ResourcePermissionModel.belongsTo(ResourceModel, {
+// Define Permission and Resource Model Relationship
+PermissionModel.belongsTo(ResourceModel, {
   foreignKey: 'resource_id',
 });
 
-ResourceModel.hasMany(ResourcePermissionModel, {
+ResourceModel.hasMany(PermissionModel, {
   foreignKey: 'resource_id',
+});
+
+// Define Permission and Operation Model Relationship
+PermissionModel.belongsTo(OperationModel, {
+  foreignKey: 'operation_id',
+});
+
+OperationModel.hasMany(PermissionModel, {
+  foreignKey: 'operation_id',
 });
 
 module.exports = {
