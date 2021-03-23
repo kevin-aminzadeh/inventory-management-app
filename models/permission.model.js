@@ -1,15 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Role extends Model {}
+class Permission extends Model {}
 
-Role.init(
+Permission.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: false,
     },
     name: {
       type: DataTypes.STRING,
@@ -21,8 +21,8 @@ Role.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'role',
+    modelName: 'permission',
   }
 );
 
-module.exports = Role;
+module.exports = Permission;

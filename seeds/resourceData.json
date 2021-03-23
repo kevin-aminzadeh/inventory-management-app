@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "user"
+  },
+  {
+    "id": 2,
+    "name": "role"
+  },
+  {
+    "id": 3,
+    "name": "product"
+  },
+  {
+    "id": 4,
+    "name": "order"
+  }
+]

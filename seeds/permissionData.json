@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "createOrder",
+    "operation_id": 1
+  },
+  {
+    "id": 2,
+    "name": "read"
+  },
+  {
+    "id": 3,
+    "name": "update"
+  },
+  {
+    "id": 4,
+    "name": "delete"
+  }
+]

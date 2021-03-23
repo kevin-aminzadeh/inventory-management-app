@@ -1,3 +1,8 @@
-class ProductModel {}
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-module.exports = ProductModel;
+class Product extends Model {}
+
+Product.init();
+
+module.exports = Product;
