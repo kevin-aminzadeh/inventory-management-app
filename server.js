@@ -54,7 +54,7 @@ app.use(routes);
 // Synchronize Models with DB
 // NOTE: DO NOT USE "force: true" IN PRODUCTION.
 // This option adds a "DROP TABLE IF EXISTS" statement before trying to create the tables. (Existing tables will be overwritten);
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   // Start Server
   app.listen(PORT, () =>
     console.log(`Server now listening on http://localhost:${PORT}`)
