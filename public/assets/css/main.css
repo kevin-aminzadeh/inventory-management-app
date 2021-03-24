@@ -1,0 +1,83 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+/* Typography */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.text-light {
+  color: #e0e0e0 !important;
+}
+
+/* General */
+
+/* Sidebar */
+.sidebar {
+  background: #292c35;
+}
+
+/* Sidebar Menu Item Styles */
+.sidebar a {
+  font-size: 0.9375em;
+  background: none;
+  border: none;
+}
+
+.sidebar .menu-item-text {
+  margin-inline-start: 0.9375em;
+}
+
+.sidebar li {
+  position: relative;
+}
+
+/* Sidebar Menu Item Active Styles */
+.sidebar li.active {
+  background-color: #252830 !important;
+}
+
+.sidebar li.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 5px;
+
+  background-color: #e09145;
+}
+
+.sidebar a.active {
+  background: none;
+  color: #fff;
+}
+
+.sidebar a.active .menu-item-icon {
+  background-color: none;
+  color: #e09145;
+}
+
+/* Sidebar Menu Item Hover Styles */
+.sidebar li:hover {
+  background-color: #252830;
+}
+
+.sidebar a:hover {
+  color: #fff !important;
+}
+
+.sidebar a:hover .menu-item-icon {
+  color: #e09145;
+}
+
+.sidebar li:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 5px;
+
+  background-color: #e09145;
+}
