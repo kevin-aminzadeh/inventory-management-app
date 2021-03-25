@@ -19,28 +19,28 @@
   <body class="h-100">
     <div class="container-fluid h-100">
       <div class="row h-100">
-        {{!-- Sidebar Wrapper --}}
-        <div class="col-6 p-0 bg-dark">
+        {{!-- Graphic Container --}}
+        <div class="d-none d-lg-block col-lg-6 p-0 bg-dark">
        
         </div>
         {{!-- Main Wrapper --}}
-        <div class="col-6 p-0" style="background-color: #FFFFFFF">
+        <div class="col-12 col-lg-6 p-0" style="background-color: #FFFFFFF">
       
           {{!-- Content Wrapper --}}
-          <main class="container h-100 ms-sm-auto px-5 py-3 d-flex flex-column justify-content-center">
+          <main class="container h-100 ms-sm-auto px-5 py-3 d-flex flex-column justify-content-center ">
             <div class="row mx-auto">
               <div class="col">
                 <h1 class="fw-bold">E L K .</h1>
               </div>
             </div>
             <div class="row mx-auto mb-5">
-              <div class="col text-muted">
+              <div class="col text-muted text-center te">
                 <h2 class="lead">Welcome back! Please login to your account.</h2>
               
               </div>
             </div>
             <div class="row w-100">
-            <form class=" px-5 text-center w-75 mx-auto">
+            <form class=" px-5 text-center w-100 mx-auto">
 
               <label for="inputEmail" class="sr-only">Email Address</label>
               <input type="email" id="inputEmail" class="form-control mb-4" placeholder="Email" required="" autofocus="">
@@ -53,20 +53,18 @@
                 </div>
                 <a href="" class="text-decoration-none text-dark">Forgot Password</a>
               </div>
-              
-              <div class="row d-flex justify-content-evenly">
-                <div class="col">
-                  <button class="btn btn-lg btn-dark btn-block w-100" type="submit">Login</button>
+              <div class="row d-flex justify-content-center">
+                <div class="col-10 col-lg-4 mb-4">
+                  <button class="btn btn-lg btn-dark w-100" type="button">Login</button>
                 </div>
-                <div class="col">
-                  {{!-- Remove Sign Up Button For Dashboard Users --}}
-                  <button class="btn btn-lg btn-outline-dark btn-block w-100">Sign Up</button>
+                <div class="col-10 col-lg-4">
+                  <button class="btn btn-lg btn-outline-dark w-100" type="button">Sign Up</button>
                 </div>
-                
+
 
               </div>
 
-              <p class="mt-5 mb-3 text-muted">© 2021 NULLTEC All Rights Reserved.</p>
+              <p class="mt-5 mb-3 text-muted text-nowrap text-center">© 2021 NULLTEC All Rights Reserved.</p>
             </form>
             </div>
 
