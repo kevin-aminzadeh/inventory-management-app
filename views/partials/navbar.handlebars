@@ -1,0 +1,37 @@
+          {{!-- Navbar --}}
+          <header
+            class="navbar navbar-expand-xl navbar-light sticky-top bg-white p-0 shadow-sm"
+          >
+            <button
+              class="navbar-toggler position-absolute d-md-none collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="input-group h-100 w-100 px-3">
+              <div class="input-group-text bg-transparent border-0 text-muted">
+                <i class="fa fa-search fa-md"></i>
+              </div>
+
+              <input
+                id="search-input"
+                type="text"
+                class="form-control form-control-dark border-0 rounded-0"
+                placeholder="Search for products, orders or customers"
+                aria-label="Search"
+              />
+            </div>
+
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav ms-auto pe-4">
+                {{>notification-dropdown}}
+                {{>user-dropdown}}
+              </ul>
+            </div>
+          </header>

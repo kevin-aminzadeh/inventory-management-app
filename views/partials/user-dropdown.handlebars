@@ -1,0 +1,24 @@
+<li class="nav-item dropdown" id="userDropdown">
+  <a
+    class="nav-link dropdown-toggle text-dark"
+    href="#"
+    id="userDropdownLink"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    <span class="me-2 ms-2">John Doe</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end border-0 shadow rounded-0 px-4 py-3 text-center" aria-labelledby="userDropdownLink">
+    {{!-- These Dropdown Items Can Be Derived Into Their Own Isolated Components At A Later Date --}}
+    <li>
+      <a class="dropdown-item" href="#">Account Settings</a>
+    </li>
+
+    <li><hr class="dropdown-divider my-2" /></li>
+
+    <li>
+      <a class="dropdown-item" href="">Logout</a>
+    </li>
+  </ul>
+</li>
