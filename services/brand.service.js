@@ -1,4 +1,4 @@
-const { ProductModel, ProductItemModel, BrandModel } = require('../models/index');
+const { ProductModel, BrandModel } = require('../models/index');
 
 exports.searchBrands = async (param) => {
   try {

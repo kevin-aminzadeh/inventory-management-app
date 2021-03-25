@@ -20,10 +20,13 @@ Product.init(
     },
     categoryID: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      defaultValue: 1,
+      allowNull: true,
       references: {
         model: 'category',
         key: 'id',
+        onDelete: 'SET DEFAULT',
+        
       },
     },
     costPrice: {
@@ -59,7 +62,7 @@ Product.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    underscored: false,
     modelName: 'product',
   }
 );

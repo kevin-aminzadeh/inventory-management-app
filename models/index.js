@@ -7,7 +7,12 @@ const CategoryModel = require('./category.model');
 
 ProductItemModel.belongsTo(ProductModel, { foreignKey: 'itemID' });
 ProductModel.hasMany(ProductItemModel, { foreignKey: 'itemID' });
-BrandModel.hasMany(ProductModel, { foreignKey: 'brandID' })
+BrandModel.hasMany(ProductModel, { foreignKey: 'brandID' });
+CategoryModel.hasMany(ProductModel, {
+  foreignKey: 'categoryID',
+  onDelete: 'SET DEFAULT',
+});
+ProductModel.belongsTo(CategoryModel, { foreignKey: 'categoryID' });
 module.exports = {
   UserModel,
   RoleModel,
