@@ -1,16 +1,97 @@
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Typography */
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.text-primary {
+  color: #e09145 !important;
+}
+
 .text-light {
   color: #e0e0e0 !important;
 }
 
+.text-muted {
+  color: #bcbccb !important;
+}
+
 /* General */
+
+/* Navbar */
+header {
+  height: 70px;
+}
+
+/* Nav Item Divider */
+#userDropdown:before {
+  content: '';
+  position: absolute;
+  top: 50;
+  left: 0;
+  height: 28px;
+  width: 1px;
+  background-color: #ebebf2;
+}
+
+.dropdown-header {
+  font-size: 1.0625em;
+  color: #4d4f5c;
+}
+
+/* Notification Bell Component */
+#notificationBtn.dropdown-toggle::after {
+  border: none;
+}
+
+#notificationDropdown .dropdown-menu {
+  width: 460px;
+}
+
+#notificationDropdown ul .dropdown-divider {
+  background-color: #f1f1f3;
+  margin: auto;
+  width: 100%;
+}
+
+.show#notificationBtn {
+  color: #e09145 !important;
+}
+
+/* DropDown Divider */
+#userDropdown ul .dropdown-divider {
+  background-color: #ebebf2;
+  margin: auto;
+  width: 90%;
+}
+
+/* Dropdown Item */
+.dropdown-item {
+  font-size: 0.8125em;
+}
+
+/* Dropdown Toggle Icon */
+.dropdown-toggle {
+  display: flex;
+}
+
+#userDropdown .dropdown-toggle::after {
+  border: none;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f078';
+  color: #bcbccb;
+}
+
+#userDropdown .show.dropdown-toggle::after {
+  border: none;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f077';
+  color: #bcbccb;
+}
 
 /* Sidebar */
 .sidebar {
@@ -19,13 +100,17 @@ body {
 
 /* Sidebar Menu Item Styles */
 .sidebar a {
-  font-size: 0.9375em;
+  font-size: 1em;
   background: none;
   border: none;
 }
 
 .sidebar .menu-item-text {
   margin-inline-start: 0.9375em;
+}
+
+.sidebar .menu-item-icon {
+  width: 1em;
 }
 
 .sidebar li {
@@ -48,12 +133,12 @@ body {
   background-color: #e09145;
 }
 
-.sidebar a.active {
+.sidebar li.active a {
   background: none;
-  color: #fff;
+  color: #fff !important;
 }
 
-.sidebar a.active .menu-item-icon {
+.sidebar li.active .menu-item-icon {
   background-color: none;
   color: #e09145;
 }
@@ -80,4 +165,13 @@ body {
   width: 5px;
 
   background-color: #e09145;
+}
+
+/* Form Styles */
+.form-control {
+  color: #292c35 !important;
+  border: 0;
+
+  border-bottom: 2px solid #e9e9f0 !important;
+  border-radius: 0 !important;
 }

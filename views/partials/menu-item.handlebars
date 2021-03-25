@@ -1,0 +1,10 @@
+<li class="nav-item d-grid {{isActiveRoute currentRoute name}}">
+  <a
+    class="list-group-item list-group-action text-start text-light {{#if active}}disabled{{/if}}""
+    href="{{link}}"
+    {{#if active}}aria-disabled="true"{{/if}}
+  >
+    <i class="fas {{icon}} menu-item-icon"></i>
+    <span class="menu-item-text">{{name}}</span>
+  </a>
+</li>

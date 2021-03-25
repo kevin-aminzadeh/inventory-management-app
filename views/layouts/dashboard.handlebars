@@ -1,4 +1,3 @@
-{{!-- DASHBOARD LAYOUT TEMPLATE --}}
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
@@ -10,74 +9,28 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
     <script
       src="https://kit.fontawesome.com/8426ae9c5d.js"
       crossorigin="anonymous"
     ></script>
-    <title>ELK. Commerce</title>
+    <title>ELK Commerce</title>
   </head>
-  <body class="h-100 d-flex flex-column">
-    {{!-- Navbar Component --}}
-    <header
-      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
-    >
-      <a href="" class="navbar-brand col-md-3 col-xl-2 px-3 me-0">
-        ELK.
-      </a>
-      <!-- Hamburger Menu Button For Sidebar -->
-      <button
-        class="navbar-toggler position-absolute d-md-none collapsed"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#sidebarMenu"
-        aria-controls="sidebarMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Search Bar Section -->
-      <div class="input-group w-100">
-        <input
-          id="search-input"
-          type="text"
-          class="form-control form-control-dark"
-          placeholder="Enter a city"
-          aria-label="Search"
-        />
-        <button class="btn btn-light rounded-0 px-4" id="search-btn">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    </header>
-    <!-- Main Content Wrapper -->
+  <body class="h-100">
     <div class="container-fluid h-100">
-      <div class="row h-100" id="app-root">
-        {{!-- Sidebar Component --}}
-      <nav
-        class="collapse col-md-3 col-lg-3 col-xl-2 sidebar d-md-block position-fixed h-100 px-0"
-      >
-        {{!-- Sidebar Content Wrapper --}}
-        <div class="position-sticky pt-5 pt-md-3 ">
-          {{!-- Sidebar Menu Link List --}}
-          <ul class="nav flex-column pt-2 pt-md-0 w-100" id="previous-search-list">
-            <li class="nav-item d-grid active">
-              <a class="list-group-item list-group-action text-start text-light active " href="#">
-                <i class="fas fa-tachometer-alt menu-item-icon"></i>
-                <span class="menu-item-text">Dashboard</span>
-              </a>
-            </li>
-          </ul>
-
+      <div class="row h-100">
+        {{!-- Sidebar Wrapper --}}
+        <div class="col-md-4 col-xl-2 p-0">
+          {{> sidebar }}
         </div>
-      </nav>
-        {{!-- Main Content Wrapper Component --}}
-        <main class="col-md-9 col-xl-10 ms-sm-auto px-md-4 py-3">
-          <div class="container">
+        {{!-- Main Wrapper --}}
+        <div class="col-md-8 col-xl-10 p-0" style="background-color: #fafafa">
+          {{> navbar }}
+          {{!-- Content Wrapper --}}
+          <main class="container ms-sm-auto px-md-4 py-3">
             {{{ body }}}
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
     </div>
 
@@ -87,8 +40,5 @@
       crossorigin="anonymous"
     ></script>
 
-
   </body>
 </html>
-
-

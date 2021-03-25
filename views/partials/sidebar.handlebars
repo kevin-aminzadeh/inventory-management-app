@@ -1,0 +1,18 @@
+{{!-- Sidebar --}}
+<nav class="collapse sidebar d-flex flex-column h-100 px-0">
+  {{!-- Logo Wrapper --}}
+  <div
+    class="navbar-brand px-3 text-light bg-dark"
+    style="margin-right: 0"
+  >
+    <h1>ELK</h1>
+  </div>
+  {{!-- Menu Wrapper --}}
+  <div class="position-sticky py-5 pt-md-3 d-flex flex-column h-100 justify-content-between">
+    {{!-- Top Menu-Item List --}}
+    {{> menu }}
+
+    {{> menu-bottom }}
+  </div>
+
+</nav>

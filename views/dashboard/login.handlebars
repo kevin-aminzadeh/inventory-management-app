@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/8426ae9c5d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>ELK Commerce</title>
+  </head>
+  <body class="h-100">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        {{!-- Sidebar Wrapper --}}
+        <div class="col-6 p-0 bg-dark">
+       
+        </div>
+        {{!-- Main Wrapper --}}
+        <div class="col-6 p-0" style="background-color: #FFFFFFF">
+      
+          {{!-- Content Wrapper --}}
+          <main class="container h-100 ms-sm-auto px-5 py-3 d-flex flex-column justify-content-center">
+            <div class="row mx-auto">
+              <div class="col">
+                <h1 class="fw-bold">E L K .</h1>
+              </div>
+            </div>
+            <div class="row mx-auto mb-5">
+              <div class="col text-muted">
+                <h2 class="lead">Welcome back! Please login to your account.</h2>
+              
+              </div>
+            </div>
+            <div class="row w-100">
+            <form class=" px-5 text-center w-75 mx-auto">
+
+              <label for="inputEmail" class="sr-only">Email Address</label>
+              <input type="email" id="inputEmail" class="form-control mb-4" placeholder="Email" required="" autofocus="">
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="inputPassword" class="form-control mt-5 mb-4" placeholder="Password" required="">
+              <div class="d-flex mt-5 mb-5 justify-content-between">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label " for="inlineCheckbox1">Remember Me</label>
+                </div>
+                <a href="" class="text-decoration-none text-dark">Forgot Password</a>
+              </div>
+              
+              <div class="row d-flex justify-content-evenly">
+                <div class="col">
+                  <button class="btn btn-lg btn-dark btn-block w-100" type="submit">Login</button>
+                </div>
+                <div class="col">
+                  {{!-- Remove Sign Up Button For Dashboard Users --}}
+                  <button class="btn btn-lg btn-outline-dark btn-block w-100">Sign Up</button>
+                </div>
+                
+
+              </div>
+
+              <p class="mt-5 mb-3 text-muted">© 2021 NULLTEC All Rights Reserved.</p>
+            </form>
+            </div>
+
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+</html>
