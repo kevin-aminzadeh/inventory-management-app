@@ -18,12 +18,14 @@
     "role_id": 3
   },
   {
+    
     "name": "Jordan",
     "email": "jordan@mail.com",
     "password": "password12345",
     "role_id": 4
   },
   {
+    
     "name": "Blake",
     "email": "blake@mail.com",
     "password": "password12345",
