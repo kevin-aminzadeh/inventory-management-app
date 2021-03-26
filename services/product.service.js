@@ -27,3 +27,27 @@ exports.getProductById = async (id) => {
     throw Error(err);
   }
 };
+
+exports.addProduct = async (body) => {
+  try {
+    const products = await Product.create(body);
+    return products;
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};
+
+exports.deleteProduct = async (param) => {
+  try {
+    const products = await Product.destroy({
+      where: {
+        id: param,
+      },
+    });
+    return products;
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};
