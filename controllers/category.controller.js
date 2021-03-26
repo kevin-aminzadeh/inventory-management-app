@@ -41,7 +41,10 @@ exports.deleteCategory = async (req, res, next) => {
 
 exports.updateCategory = async (req, res, next) => {
   try {
-    const products = await CategoryService.updateCategory(req.body, req.params.id);
+    const products = await CategoryService.updateCategory(
+      req.body,
+      req.params.id
+    );
     return res.status(200).json({
       status: 200,
       data: products,
