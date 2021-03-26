@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "pending"
+  },
+  {
+    "id": 2,
+    "name": "processing"
+  },
+  {
+    "id": 3,
+    "name": "shipped"
+  },
+  {
+    "id": 4,
+    "name": "delivered"
+  },
+  {
+    "id": 5,
+    "name": "cancelled"
+  },
+  {
+    "id": 6,
+    "name": "returned"
+  },
+  {
+    "id": 7,
+    "name": "refunded"
+  }
+]
