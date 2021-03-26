@@ -1,19 +1,45 @@
-const UserModel = require('./User.model');
-const RoleModel = require('./Role.model');
-const ProductModel = require('./Product.model');
+const User = require('./User.model');
+const Role = require('./Role.model');
+const Product = require('./Product.model');
 const Item = require('./Item.model');
-const BrandModel = require('./Brand.model');
-const CategoryModel = require('./Category.model');
+const Brand = require('./Brand.model');
+const Category = require('./Category.model');
 
-Item.belongsTo(ProductModel, { foreignKey: 'itemID' });
-ProductModel.hasMany(Item, { foreignKey: 'itemID' });
-BrandModel.hasMany(ProductModel, { foreignKey: 'brandID' });
+// Describe Category and Product Relationship
+Category.hasMany(Product, {
+  foreignKey: 'category_id',
+  onDelete: 'SET NULL',
+});
+
+Product.belongsTo(Category, {
+  foreignKey: 'category_id',
+});
+
+// Describe Brand and Product Relationship
+Brand.hasMany(Product, {
+  foreignKey: 'brand_id',
+  onDelete: 'SET NULL',
+});
+
+Product.belongsTo(Brand, {
+  foreignKey: 'brand_id',
+});
+
+// Describe Product and Item Relationship
+Product.hasMany(Item, {
+  foreignKey: 'product_id',
+  onDelete: 'CASCADE',
+});
+
+Item.belongsTo(Product, {
+  foreignKey: 'product_id',
+});
 
 module.exports = {
-  UserModel,
-  RoleModel,
-  ProductModel,
+  User,
+  Role,
+  Product,
   Item,
-  BrandModel,
-  CategoryModel,
+  Brand,
+  Category,
 };
