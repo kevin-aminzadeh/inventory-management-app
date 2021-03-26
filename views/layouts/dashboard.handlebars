@@ -18,13 +18,11 @@
   </head>
   <body class="h-100">
     <div class="container-fluid h-100">
-      <div class="row h-100">
-        {{!-- Sidebar Wrapper --}}
-        <div class="col-md-4 col-xl-2 p-0">
+      <div class="row h-100 " style="background-color: #fafafa">
+        {{!-- Sidebar Component --}}
           {{> sidebar }}
-        </div>
         {{!-- Main Wrapper --}}
-        <div class="col-md-8 col-xl-10 p-0" style="background-color: #fafafa">
+        <div class="col p-0" >
           {{> navbar }}
           {{!-- Content Wrapper --}}
           <main class="container ms-sm-auto px-md-4 py-3">
@@ -42,12 +40,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+          const sideBarEl = document.querySelector('.sidebar');
           const toggler =document.getElementById('sidebarToggler');
           toggler.addEventListener('click', () => {
-            console.log('click')
+            console.log('click');
+            sideBarEl.classList.toggle('active')
+            
           })
-        })
-
+        });
     </script>
 
 

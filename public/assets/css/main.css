@@ -20,9 +20,13 @@ body {
 
 /* General */
 
-/* Navbar */
+/*|| Navbar Styles ||*/
 header {
-  height: 70px;
+  min-height: 70px;
+}
+
+#search-input {
+  border-bottom: 0 !important;
 }
 
 /* Nav Item Divider */
@@ -98,6 +102,32 @@ header {
   background: #292c35;
   flex-wrap: nowrap;
   align-items: unset;
+  width: 260px;
+}
+
+.sidebar-header {
+  height: 70px;
+}
+
+/*|| Sidebar Collapsed Styles ||*/
+.sidebar.active {
+  min-width: 66px;
+  max-width: 66px;
+  top: auto;
+  bottom: 10px;
+}
+
+.sidebar.active .sidebar-header {
+  text-align: center;
+  align-items: center;
+}
+
+.sidebar.active a {
+  text-align: center !important;
+}
+
+.sidebar.active span {
+  display: none;
 }
 
 /* Sidebar Menu Item Styles */
@@ -113,6 +143,7 @@ header {
 
 .sidebar .menu-item-icon {
   width: 1em;
+  height: 1em;
 }
 
 .sidebar li {
@@ -167,13 +198,6 @@ header {
   width: 5px;
 
   background-color: #e09145;
-}
-
-/*|| Sidebar Collapsed Styles ||*/
-.sidebar.active {
-  min-width: 80px;
-  max-width: 80px;
-  text-align: center;
 }
 
 /*|| Form Styles ||*/
