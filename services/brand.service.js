@@ -40,3 +40,17 @@ exports.deleteBrand = async (param) => {
     throw Error(err);
   }
 };
+
+exports.updateBrand = async (param, data) => {
+  try {
+    const products = await Brand.update(param, {
+      where: {
+        id: data,
+      },
+    });
+    return products;
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};
