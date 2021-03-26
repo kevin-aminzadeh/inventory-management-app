@@ -11,6 +11,10 @@ Order.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    order_total: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     customer_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -19,21 +23,13 @@ Order.init(
         key: 'id',
       },
     },
-    product_id: {
+    status_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'product',
+        model: 'orderStatus',
         key: 'id',
       },
-    },
-    order_total: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    order_status: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {
