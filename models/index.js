@@ -4,6 +4,9 @@ const Product = require('./Product.model');
 const Item = require('./Item.model');
 const Brand = require('./Brand.model');
 const Category = require('./Category.model');
+const Order = require('./order.model');
+const OrderItem = require('./orderItem.model');
+const OrderStatus = require('./orderStatus.model');
 
 // Describe Category and Product Relationship
 Category.hasMany(Product, {
@@ -35,6 +38,33 @@ Item.belongsTo(Product, {
   foreignKey: 'product_id',
 });
 
+// Describe Item and OrderItem Relationship
+OrderItem.belongsTo(Item, {
+  foreignKey: 'item_id',
+});
+
+Item.hasOne(OrderItem, {
+  foreignKey: 'item_id',
+});
+
+// Describe Order and OrderItem Relationship
+Order.hasMany(OrderItem, {
+  foreignKey: 'order_id',
+});
+
+OrderItem.belongsTo(Order, {
+  foreignKey: 'order_id',
+});
+
+// Describe Order and OrderStatus Relationship
+Order.belongsTo(OrderStatus, {
+  foreignKey: 'status_id',
+});
+
+OrderStatus.hasMany(Order, {
+  foreignKey: 'status_id',
+})
+
 module.exports = {
   User,
   Role,
@@ -42,4 +72,7 @@ module.exports = {
   Item,
   Brand,
   Category,
+  Order,
+  OrderStatus,
+  OrderItem,
 };
