@@ -22,12 +22,6 @@ Product.init(
       type: DataTypes.INTEGER,
       defaultValue: 1,
       allowNull: true,
-      references: {
-        model: 'category',
-        key: 'id',
-        onDelete: 'SET DEFAULT',
-        
-      },
     },
     costPrice: {
       type: DataTypes.FLOAT,
