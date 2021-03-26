@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Product extends Model {}
+
 Product.init(
   {
     id: {
@@ -13,24 +14,28 @@ Product.init(
     sku: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    categoryID: {
-      type: DataTypes.INTEGER,
+    cost: {
+      type: DataTypes.FLOAT,
       allowNull: false,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'category',
         key: 'id',
       },
     },
-    costPrice: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    brandID: {
+    brand_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -38,29 +43,15 @@ Product.init(
         key: 'id',
       },
     },
-    salePrice: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    dateCreated: {
-      type: DataTypes.DATE,
-      allowNull: true,
-    },
-    dateDeleted: {
-      type: DataTypes.DATE,
-      allowNull: true,
-    },
-    dateUpdated: {
-      type: DataTypes.DATE,
-      allowNull: true,
-    },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'product',
+    hooks: {},
   }
 );
+
 module.exports = Product;
