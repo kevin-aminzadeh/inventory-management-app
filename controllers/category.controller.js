@@ -38,3 +38,16 @@ exports.deleteCategory = async (req, res, next) => {
     return res.status(400).json({ status: 400, message: err.message });
   }
 };
+
+exports.updateCategory = async (req, res, next) => {
+  try {
+    const products = await CategoryService.updateCategory(req.body, req.params.id);
+    return res.status(200).json({
+      status: 200,
+      data: products,
+      message: 'Successfully Updated Category.',
+    });
+  } catch (err) {
+    return res.status(400).json({ status: 400, message: err.message });
+  }
+};
