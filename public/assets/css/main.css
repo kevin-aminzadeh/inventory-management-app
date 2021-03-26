@@ -93,9 +93,11 @@ header {
   color: #bcbccb;
 }
 
-/* Sidebar */
+/*||  Sidebar Styles ||*/
 .sidebar {
   background: #292c35;
+  flex-wrap: nowrap;
+  align-items: unset;
 }
 
 /* Sidebar Menu Item Styles */
@@ -167,7 +169,14 @@ header {
   background-color: #e09145;
 }
 
-/* Form Styles */
+/*|| Sidebar Collapsed Styles ||*/
+.sidebar.active {
+  min-width: 80px;
+  max-width: 80px;
+  text-align: center;
+}
+
+/*|| Form Styles ||*/
 .form-control {
   color: #292c35 !important;
   border: 0;
