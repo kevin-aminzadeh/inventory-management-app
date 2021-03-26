@@ -27,3 +27,12 @@ exports.getProductById = async (id) => {
     throw Error(err);
   }
 };
+exports.AddProduct = async (data) => {
+  try {
+    const products = await ProductModel.create(data);
+    return products;
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};
