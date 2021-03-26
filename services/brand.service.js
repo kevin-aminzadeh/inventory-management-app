@@ -1,13 +1,13 @@
-const { ProductModel, ProductItemModel, BrandModel } = require('../models/index');
+const { Product, Brand } = require('../models/index');
 
 exports.searchBrands = async (param) => {
   try {
-    const products = await BrandModel.findAll({
+    const products = await Brand.findAll({
       where: {
         name: param,
       },
       include: {
-        model: ProductModel,
+        model: Product,
       },
     });
     return products;
