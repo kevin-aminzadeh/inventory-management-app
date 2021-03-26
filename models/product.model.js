@@ -37,7 +37,6 @@ Product.init(
     },
     brand_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: 'brand',
         key: 'id',

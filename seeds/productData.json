@@ -1,57 +1,58 @@
-[{
-  "sku": "XXXX0000001",
-  "name": "Iphone 12 Pro",
-  "categoryID": 2,
-  "costPrice": 200.00,
-  "brandID": 1,
-  "salePrice": 300.00
-},
-{
-  "sku": "XXXX0000001",
-  "name": "Iphone 12 Pro",
-  "categoryID": 2,
-  "costPrice": 200.00,
-  "brandID": 1,
-  "salePrice": 300.00
-},
-{
-  "sku": "XXXX0000001",
-  "name": "Iphone 12 Pro",
-  "categoryID": 2,
-  "costPrice": 200.00,
-  "brandID": 1,
-  "salePrice": 300.00
-},
-{
-  "sku": "XXXX0000001",
-  "name": "Iphone 12 Pro",
-  "categoryID": 2,
-  "costPrice": 200.00,
-  "brandID": 1,
-  "salePrice": 300.00
-},
-{
-  "sku": "XXXX0000001",
-  "name": "Iphone 12 Pro",
-  "categoryID": 2,
-  "costPrice": 200.00,
-  "brandID": 1,
-  "salePrice": 300.00
-},
-{
-  "sku": "XXXX0000002",
-  "name": "Iphone 12 Pro Max",
-  "categoryID": 2,
-  "costPrice": 200.00,
-  "brandID": 1,
-  "salePrice": 300.00
-},
-{
-  "sku": "XXXX0000003",
-  "name": "Pixel 5g XL",
-  "categoryID": 2,
-  "costPrice": 200.00,
-  "brandID": 2,
-  "salePrice": 300.00
-}
+[
+  {
+    "sku": "XXXX0000001",
+    "name": "Iphone 12 Pro",
+    "category_id": 2,
+    "cost": 200.0,
+    "brand_id": 1,
+    "price": 300.0
+  },
+  {
+    "sku": "XXXX0000002",
+    "name": "Iphone 12 XS",
+    "category_id": 2,
+    "cost": 200.0,
+    "brand_id": 1,
+    "price": 300.0
+  },
+  {
+    "sku": "XXXX0000003",
+    "name": "Iphone 12",
+    "category_id": 2,
+    "cost": 200.0,
+    "brand_id": 1,
+    "price": 300.0
+  },
+  {
+    "sku": "XXXX0000004",
+    "name": "iPad Pro",
+    "category_id": 2,
+    "cost": 200.0,
+    "brand_id": 1,
+    "price": 300.0
+  },
+  {
+    "sku": "XXXX0000005",
+    "name": "Google Chromebook",
+    "category_id": 2,
+    "cost": 200.0,
+    "brand_id": 1,
+    "price": 300.0
+  },
+  {
+    "sku": "XXXX0000006",
+    "name": "MacBook Pro 2020",
+    "category_id": 2,
+    "cost": 200.0,
+    "brand_id": 1,
+    "price": 300.0
+  },
+  {
+    "sku": "XXXX0000007",
+    "name": "Pixel 5g XL",
+    "category_id": 2,
+    "cost": 200.0,
+    "brand_id": 2,
+    "price": 300.0
+  }
 ]
