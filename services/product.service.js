@@ -51,3 +51,17 @@ exports.deleteProduct = async (param) => {
     throw Error(err);
   }
 };
+
+exports.updateProduct = async (param, data) => {
+  try {
+    const products = await Product.update(param, {
+      where: {
+        id: data,
+      },
+    });
+    return products;
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};

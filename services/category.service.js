@@ -40,3 +40,18 @@ exports.deleteCategory = async (param) => {
     throw Error(err);
   }
 };
+
+exports.updateCategory = async (param, data) => {
+  try {
+    const products = await Category.update(param, {
+      where: {
+        id: data,
+      },
+    });
+    return products;
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};
+

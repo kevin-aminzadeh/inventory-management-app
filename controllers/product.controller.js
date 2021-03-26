@@ -49,3 +49,19 @@ exports.deleteProduct = async (req, res, next) => {
     return res.status(400).json({ status: 400, message: err.message });
   }
 };
+
+exports.updateProduct = async (req, res, next) => {
+  try {
+    const products = await ProductController.updateProduct(
+      req.body,
+      req.params.id
+    );
+    return res.status(200).json({
+      status: 200,
+      data: products,
+      message: 'Successfully Updated Product.',
+    });
+  } catch (err) {
+    return res.status(400).json({ status: 400, message: err.message });
+  }
+};
