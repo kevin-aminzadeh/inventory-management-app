@@ -13,4 +13,26 @@ module.exports = {
     }
     return '';
   },
+
+  getStockBadgeColour: (stockCount) => {
+    // Convert input value to an integer in case a string value is passed to the function
+    const count = parseInt(stockCount, 10);
+    switch (true) {
+      case count === 0:
+        return 'danger';
+      case count < 20:
+        return 'warning';
+      default:
+        return 'success';
+    }
+  },
+
+  isInStock: (stockCount) => {
+    // Convert input value to an integer in case a string value is passed to the function
+    const count = parseInt(stockCount, 10);
+    if (count === 0) {
+      return 'Out of Stock';
+    }
+    return `${count} in Stock`;
+  },
 };

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,27 +16,26 @@
     ></script>
     <title>ELK Commerce</title>
   </head>
-  <body class="h-100">
-    <div class="container-fluid h-100">
-      <div class="row h-100 " style="background-color: #fafafa">
-        {{!-- Sidebar Component --}}
-          {{> sidebar }}
-        {{!-- Main Wrapper --}}
-        <div class="col p-0" >
-          {{> navbar }}
-          {{!-- Content Wrapper --}}
-          <main class="container ms-sm-auto px-md-4 py-3">
-            {{{ body }}}
-          </main>
+  <body class="overflow-hidden" style="background-color: #fafafa">
+    {{!-- Layout Grid --}}
+    <div class=" vh-100" style="display: grid; grid-template-columns: fit-content(260px) 1fr;">
+        {{> sidebar}}
+        {{!-- Main Content Wrapper --}}
+      <div class="body h-100 d-flex flex-column" style="overflow-y: auto; ">
+        {{> navbar}}
+        {{!-- Page Content Wrapper --}}
+        <div class="container-fluid ms-sm-auto px-4 py-5" id="content">
+          {{{body}}}
         </div>
       </div>
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -49,6 +48,54 @@
           })
         });
     </script>
+
+    <script>
+var ctx = document.getElementById('salesChart');
+var salesChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+            data: [15000, 7000, 18000, 11000, 16000, 9000],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      fill: true,
+        aspectRatio: 4,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 5000,
+                    callback: (value, index, values) => {
+                      return '$' + value;
+                    }
+                }
+            }]
+        }
+    }
+});
+</script>
 
 
   </body>

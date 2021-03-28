@@ -1,2 +1,30 @@
-<h1>Dashboard Home Template</h1>
-<h2>Current Route is {{currentRoute}}</h2>
+<div class="container px-0">
+<div class="row mb-4">
+  <div class="col">
+    <h1>Overview</h1>
+  </div>
+</div>
+
+{{!-- Stat Cards Wrapper --}}
+  <div class="row mb-4 px-0">
+    {{> stat-card title="Pending Orders" count="10" stat="13.8"}}
+    {{> stat-card title="Fulfilled Orders" count="83" stat="13.8"}}
+    {{> stat-card title="Products Sold" count="321" stat="13.8"}}
+  </div>
+
+{{!-- Sales Report Card Component --}}
+{{> sales-report-card }}
+
+<div class="row mb-4 px-0">
+  <div class="col">
+    {{!-- Top Products Component --}}
+    {{> top-products-card}}
+  </div>
+  <div class="col">
+    
+  </div>
+
+</div>
+
+
+</div>
