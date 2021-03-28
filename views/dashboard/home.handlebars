@@ -3,6 +3,11 @@
   <div class="col">
     <h1>Overview</h1>
   </div>
+  <div class="col text-end">
+    <button class="btn btn-lg btn-primary rounded-0 shadow">
+      <span class="align-middle me-2"><i class="fas fa-plus"></i></span>New Order
+    </button>
+  </div>
 </div>
 
 {{!-- Stat Cards Wrapper --}}
@@ -20,8 +25,8 @@
     {{!-- Top Products Component --}}
     {{> top-products-card}}
   </div>
-  <div class="col">
-    
+  <div class="col col-lg-4">
+    {{> quick-details-card}}
   </div>
 
 </div>
