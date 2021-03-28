@@ -27,3 +27,15 @@ exports.searchOrder = async (req, res, next) => {
 };
 
 
+exports.addOrder = async (req, res, next) => {
+  try {
+    const products = await OrderService.addOrder(req.body);
+    return res.status(200).json({
+      status: 200,
+      data: products,
+      message: 'Successfully Added Order.',
+    });
+  } catch (err) {
+    return res.status(400).json({ status: 400, message: err.message });
+  }
+};
