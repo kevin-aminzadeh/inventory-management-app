@@ -5,16 +5,6 @@
     "product_id" : 2
   },
   {
-    "item_id": 1,
-    "order_id": 1,
-    "product_id" : 3
-  },
-  {
-    "item_id": 1,
-    "order_id": 1,
-    "product_id" : 1
-  },
-  {
     "item_id": 2,
     "order_id": 1,
     "product_id" : 1
