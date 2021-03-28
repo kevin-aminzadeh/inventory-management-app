@@ -26,4 +26,13 @@ module.exports = {
         return 'success';
     }
   },
+
+  isInStock: (stockCount) => {
+    // Convert input value to an integer in case a string value is passed to the function
+    const count = parseInt(stockCount, 10);
+    if (count === 0) {
+      return 'Out of Stock';
+    }
+    return `${count} in Stock`;
+  },
 };
