@@ -14,6 +14,15 @@ OrderItem.init(
         key: 'id',
       },
     },
+    product_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: false,
+      references: {
+        model: 'product',
+        key: 'id',
+      },
+    },
     order_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
