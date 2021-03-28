@@ -47,6 +47,10 @@ Item.hasOne(OrderItem, {
   foreignKey: 'item_id',
 });
 
+OrderItem.belongsTo(Product, {
+  foreignKey: 'item_id',
+});
+
 // Describe Order and OrderItem Relationship
 Order.hasMany(OrderItem, {
   foreignKey: 'order_id',

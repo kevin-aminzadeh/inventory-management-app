@@ -25,9 +25,20 @@ Order.init(
     },
     status_id: {
       type: DataTypes.INTEGER,
+      defaultValue: 1,
       allowNull: false,
       references: {
         model: 'orderStatus',
+        key: 'id',
+      },
+    },
+    employee_id: {
+      type: DataTypes.INTEGER,
+      defaultValue: null,
+      primaryKey: false,
+      allowNull: true,
+      references: {
+        model: 'user',
         key: 'id',
       },
     },
