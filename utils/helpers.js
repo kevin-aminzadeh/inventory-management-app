@@ -14,6 +14,7 @@ module.exports = {
     return '';
   },
 
+  // Return The Correct Colour Class For Product Stock Level Pills Based on Stock Count
   getStockBadgeColour: (stockCount) => {
     // Convert input value to an integer in case a string value is passed to the function
     const count = parseInt(stockCount, 10);
@@ -27,6 +28,7 @@ module.exports = {
     }
   },
 
+  // Return Product Stock Level Text Based on Stock Count
   isInStock: (stockCount) => {
     // Convert input value to an integer in case a string value is passed to the function
     const count = parseInt(stockCount, 10);
@@ -34,5 +36,19 @@ module.exports = {
       return 'Out of Stock';
     }
     return `${count} in Stock`;
+  },
+
+  // Return The Appropriate Icon for Quick Details Row Component Based on Data Type
+  getIcon: (dataType) => {
+    switch (dataType) {
+      case 'customer':
+        return 'fa-user-plus';
+      case 'order':
+        return 'fa-receipt';
+      case 'product':
+        return 'fa-barcode';
+      default:
+        throw Error('Invalid Data Type');
+    }
   },
 };
