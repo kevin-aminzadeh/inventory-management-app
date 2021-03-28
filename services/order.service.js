@@ -50,10 +50,20 @@ exports.searchOrder = async (params) => {
 
 exports.addOrder = async (param) => {
   try {
-    const products = await Order.create(param);
-    return products;
+    const createOrder = await Order.create({
+      order_total: param.order_total,
+      customer_id: param.customer_id,
+    });
+    const orderId = createOrder.get({ plain: true }).id;
+    param.order_items.forEach((e) => {
+      OrderItem.create({
+        item_id: e.item_id,
+        order_id: orderId,
+        product_id: e.product_id,
+      });
+    });
+    console.log(orderId);
   } catch (err) {
-    // Log Errors
     throw Error(err);
   }
 };
