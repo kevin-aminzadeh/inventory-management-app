@@ -31,6 +31,15 @@ Order.init(
         key: 'id',
       },
     },
+    employee_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: false,
+      allowNull: true,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
