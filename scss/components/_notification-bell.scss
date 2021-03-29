@@ -1,0 +1,43 @@
+.notification-bell {
+  @extend .btn-group;
+
+  // Bell Button
+  button {
+    @extend .btn;
+    @extend .text-muted;
+
+    &.show {
+      @extend .text-primary;
+    }
+  }
+
+  // Dropdown Container
+  ul {
+    @extend .border-0;
+    @extend .shadow;
+    @extend .rounded-0;
+    @extend .px-4;
+
+    width: 460px;
+
+    // Dropdown List Items
+    li {
+      a {
+        .event-name {
+          @extend .text-dark;
+          @extend .fw-bold;
+        }
+
+        .event-action {
+          @extend .text-dark;
+        }
+
+        .event-time {
+          @extend .mt-2;
+          @extend .text-muted;
+          font-size: 0.6875rem;
+        }
+      }
+    }
+  }
+}

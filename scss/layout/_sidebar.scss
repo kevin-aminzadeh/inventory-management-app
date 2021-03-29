@@ -1,0 +1,166 @@
+/*||  Sidebar Styles ||*/
+.sidebar {
+  @extend .collapse;
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .h-100;
+  @extend .px-0;
+  @extend .justify-content-between;
+
+  background: #292c35;
+  flex-wrap: nowrap;
+  align-items: unset;
+  width: 260px;
+
+  .sidebar-top {
+    // Header
+    .sidebar-header {
+      @extend .shadow-sm;
+      @extend .px-3;
+      @extend .text-light;
+      @extend .bg-dark;
+      @extend .d-flex;
+      @extend .flex-column;
+      @extend .justify-content-center;
+
+      height: 70px;
+
+      h1 {
+        @extend .h2;
+        @extend .text-white;
+        @extend .fw-bold;
+        @extend .mb-0;
+        font-size: 2rem !important;
+      }
+    }
+  }
+
+  a {
+    @extend .text-muted;
+    font-size: 1em;
+    background: none;
+    border: none;
+
+    &:hover {
+      @extend .text-white;
+
+      .menu-item-icon {
+        @extend .text-primary;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+
+    // Active Styles
+    &.active {
+      background-color: #252830 !important;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 0;
+        width: 5px;
+
+        background-color: #e09145;
+      }
+
+      a {
+        background: none;
+        color: #fff !important;
+      }
+
+      .menu-item-icon {
+        background-color: none;
+        color: #e09145;
+      }
+    }
+
+    // Hover Styles
+    &:hover {
+      background-color: #252830;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 0;
+        width: 5px;
+
+        background-color: #e09145;
+      }
+    }
+  }
+
+  .menu-item-text {
+    margin-inline-start: 0.9375em;
+  }
+
+  .menu-item-icon {
+    width: 1em;
+    height: 1em;
+  }
+
+  // Bottom Area Wrapper
+  .sidebar-bottom {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .h-100;
+    @extend .justify-content-between;
+  }
+
+  // Toggler Button
+  #sidebarToggler {
+    @extend .btn;
+    @extend .btn-dark;
+    @extend .text-muted;
+    @extend .rounded-0;
+    font-size: 1.3rem;
+
+    &::after {
+      border: none;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f100';
+    }
+
+    &:hover {
+      @extend .text-white;
+    }
+  }
+
+  // Active Styles
+  &.active {
+    @extend .active;
+    min-width: 66px;
+    max-width: 66px;
+    top: auto;
+    bottom: 10px;
+
+    .sidebar-header {
+      text-align: center;
+      align-items: center;
+    }
+
+    a {
+      text-align: center !important;
+    }
+
+    span {
+      display: none;
+    }
+
+    #sidebarToggler {
+      &::after {
+        border: none;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f101';
+      }
+    }
+  }
+}

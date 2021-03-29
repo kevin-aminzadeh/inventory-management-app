@@ -4,7 +4,7 @@
     <h1>Overview</h1>
   </div>
   <div class="col text-end">
-    <button class="btn btn-lg btn-primary rounded-0 shadow">
+    <button class="btn btn-dark shadow">
       <span class="align-middle me-2"><i class="fas fa-plus"></i></span>New Order
     </button>
   </div>
@@ -12,21 +12,45 @@
 
 {{!-- Stat Cards Wrapper --}}
   <div class="row mb-4 px-0">
-    {{> stat-card title="Pending Orders" count="10" stat="13.8"}}
-    {{> stat-card title="Fulfilled Orders" count="83" stat="13.8"}}
-    {{> stat-card title="Products Sold" count="321" stat="13.8"}}
+    <div class="col-12 col-md-4 col-md-4 col-lg-4 mb-4">
+      {{#> card heading="Pending Orders" statCard=true headingClass="stat-heading"}}
+        {{> stat-summary  count="10" stat="13.8"}}
+      {{/ card}}
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 mb-4">
+      {{#> card heading="Fulfilled Orders" statCard=true headingClass="stat-heading"}}
+      {{> stat-summary title="Pending Orders" count="10" stat="13.8"}}
+      {{/ card}}
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 mb-4">
+      {{#> card heading="Products Sold" statCard=true headingClass="stat-heading"}}
+      {{> stat-summary title="Pending Orders" count="10" stat="13.8"}}
+      {{/ card}}
+    </div>
   </div>
 
 {{!-- Sales Report Card Component --}}
-{{> sales-report-card }}
-
-<div class="row mb-4 px-0">
-  <div class="col">
-    {{!-- Top Products Component --}}
-    {{> top-products-card}}
+<div class="row px-0 d-none d-lg-flex">
+  <div class="col mb-4">
+    {{#> card heading="Sales Revenue"}}
+      {{> chart}}
+    {{/ card}}
   </div>
-  <div class="col col-lg-4">
-    {{> quick-details-card}}
+
+</div>
+
+
+<div class="row">
+  <div class="col mb-4">
+    {{!-- Top Products Component --}}
+    {{#> card heading="Top Selling Products"}}
+      {{> products-table}}
+    {{/ card}}
+  </div>
+  <div class="col col-lg-4 mb-4">
+    {{#> card heading="Quick Insights"}}
+      {{> quick-details-table}}
+    {{/ card}}
   </div>
 
 </div>

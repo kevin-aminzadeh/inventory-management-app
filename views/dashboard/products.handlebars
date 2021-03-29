@@ -1,3 +1,24 @@
-<h1>Products View</h1>
+<div class="container px-0">
+<div class="row mb-4">
+  <div class="col">
+    <h1>Products</h1>
+  </div>
+  <div class="col text-end">
+    <button class="btn btn-dark shadow" >
+      <span class="align-middle me-2"><i class="fas fa-plus"></i></span>Add Product
+    </button>
+  </div>
+</div>
 
-<h2>Current Route is {{currentRoute}}</h2>
+<div class="row mb-4 px-0">
+  <div class="col">
+    {{!-- Top Products Component --}}
+    {{#> card heading="250 Products"}}
+      {{> products-table products}}
+    {{/ card}}
+  </div>
+
+</div>
+
+
+</div>

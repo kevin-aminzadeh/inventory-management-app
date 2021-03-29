@@ -1,0 +1,17 @@
+.btn-dark {
+  @extend .btn-dark;
+
+  &:hover {
+    background-color: rgba(41, 44, 53, 0.9);
+    border-color: rgba(41, 44, 53, 0.95);
+  }
+
+  &:active {
+    background-color: rgba(41, 44, 53, 0.85);
+    border-color: rgba(41, 44, 53, 0.9);
+  }
+
+  &:disabled {
+    background-color: #292c35;
+  }
+}

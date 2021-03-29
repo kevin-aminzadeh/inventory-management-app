@@ -1,0 +1,39 @@
+.card {
+  @extend .container;
+  @extend .px-3;
+  @extend .py-4;
+  @extend .bg-white;
+  @extend .shadow-sm;
+  @extend .h-100;
+  @extend .border-0;
+  @extend .rounded-0;
+
+  .card-top {
+    @extend .row;
+    @extend .mb-4;
+    @extend .pe-3;
+    @extend .bg-transparent;
+    @extend .border-0;
+  }
+
+  .card-content {
+    @extend .row;
+    @extend .justify-content-center;
+    @extend .mt-4;
+    @extend .h-100;
+  }
+}
+
+.stat-card {
+  @extend .card;
+  padding-bottom: 0 !important;
+
+  .card-content {
+    margin-top: 0 !important;
+  }
+
+  .graph {
+    @extend .d-md-none;
+    @extend .d-lg-block;
+  }
+}

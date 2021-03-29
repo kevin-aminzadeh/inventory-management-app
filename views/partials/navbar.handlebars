@@ -14,21 +14,22 @@
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="input-group h-100 w-100 px-3">
-              <div class="input-group-text bg-transparent border-0 text-muted">
-                <i class="fa fa-search fa-md"></i>
+
+
+            <div class="collapse navbar-collapse h-100">
+              <div class="input-group h-100 w-100 px-3">
+                <div class="input-group-text bg-transparent border-0 text-muted">
+                  <i class="fa fa-search fa-lg"></i>
+                </div>
+
+                <input
+                  id="search-input"
+                  type="text"
+                  class="form-control form-control-dark border-0 rounded-0"
+                  placeholder="Search for products, orders or customers"
+                  aria-label="Search"
+                />
               </div>
-
-              <input
-                id="search-input"
-                type="text"
-                class="form-control form-control-dark border-0 rounded-0"
-                placeholder="Search for products, orders or customers"
-                aria-label="Search"
-              />
-            </div>
-
-            <div class="collapse navbar-collapse">
               <ul class="navbar-nav ms-auto pe-4">
                 {{>notification-dropdown}}
                 {{>user-dropdown}}

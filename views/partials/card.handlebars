@@ -1,0 +1,12 @@
+<div class="card {{#if statCard}}stat-card{{/if}}">
+  <div class="card-top">
+    <div class="col">
+      <h2 class="{{headingClass}}">{{heading}}</h2>
+    </div>
+  </div>
+  <div class="card-content">
+    <div class="col h-100" >
+      {{> @partial-block}}
+    </div>
+  </div>
+</div>
