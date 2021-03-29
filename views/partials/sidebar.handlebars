@@ -1,9 +1,9 @@
 {{!-- Sidebar --}}
-<nav class="collapse sidebar active d-flex flex-column h-100 px-0 justify-content-between">
+<nav class="sidebar">
   {{!-- Top Section Wrapper --}}
-  <div class="">
-    <div class="sidebar-header shadow-sm px-3 text-light bg-dark d-flex flex-column justify-content-center">
-        <h1 class="h2 fw-bold mb-0">IVY</h1>
+  <div class="sidebar-top">
+    <div class="sidebar-header">
+        <h1 class="brand">IVY</h1>
     </div>
         {{!-- Top Menu-Item List --}}
     {{> menu }}
@@ -12,13 +12,12 @@
 
 
   {{!-- Menu Wrapper --}}
-  <div class=" d-flex flex-column h-100  justify-content-between">
+  <div class="sidebar-bottom">
 
 
     {{> menu-bottom }}
   </div>
-  <button class="btn btn-dark rounded-0" id="sidebarToggler">
-    <i class="fas fa-angle-double-left fa-lg text-muted"></i>
+  <button id="sidebarToggler">
   </button>
 
 </nav>
