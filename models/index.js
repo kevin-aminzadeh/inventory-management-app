@@ -1,9 +1,9 @@
-const User = require('./User.model');
-const Role = require('./Role.model');
-const Product = require('./Product.model');
-const Item = require('./Item.model');
-const Brand = require('./Brand.model');
-const Category = require('./Category.model');
+const User = require('./user.model');
+const Role = require('./role.model');
+const Product = require('./product.model');
+const Item = require('./item.model');
+const Brand = require('./brand.model');
+const Category = require('./category.model');
 const Order = require('./order.model');
 const OrderItem = require('./orderItem.model');
 const OrderStatus = require('./orderStatus.model');
@@ -67,7 +67,7 @@ Order.belongsTo(OrderStatus, {
 
 OrderStatus.hasMany(Order, {
   foreignKey: 'status_id',
-})
+});
 
 module.exports = {
   User,

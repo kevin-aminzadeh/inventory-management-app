@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "seed": "node seeds/seed.js",
-    "start": "concurrently \"npm:watch-*\"",
+    "dev": "concurrently \"npm:watch-*\"",
+    "start": "node server.js",
     "watch-js": "nodemon -e js,handlebars server.js",
     "watch-sass": "sass --watch scss:public/assets/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,11 +33,11 @@
     "express-session": "^1.17.1",
     "handlebars": "^4.7.7",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.1"
+    "sequelize": "^6.6.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
-    "eslint": "^7.22.0",
+    "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-note": "^0.1.0",
     "eslint-config-prettier": "^8.1.0",

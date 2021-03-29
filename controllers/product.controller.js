@@ -25,7 +25,7 @@ exports.getProducts = async (req, res, next) => {
 };
 exports.addProduct = async (req, res, next) => {
   try {
-    const products = await ProductController.addProduct(req.body);
+    const products = await ProductService.addProduct(req.body);
     return res.status(200).json({
       status: 200,
       data: products,
@@ -37,7 +37,7 @@ exports.addProduct = async (req, res, next) => {
 };
 exports.deleteProduct = async (req, res, next) => {
   try {
-    const products = await ProductController.deleteProduct(req.params.id);
+    const products = await ProductService.deleteProduct(req.params.id);
     return res.status(200).json({
       status: 200,
       data: products,
@@ -50,7 +50,7 @@ exports.deleteProduct = async (req, res, next) => {
 
 exports.updateProduct = async (req, res, next) => {
   try {
-    const products = await ProductController.updateProduct(
+    const products = await ProductService.updateProduct(
       req.body,
       req.params.id
     );
@@ -61,5 +61,48 @@ exports.updateProduct = async (req, res, next) => {
     });
   } catch (err) {
     return res.status(400).json({ status: 400, message: err.message });
+  }
+};
+
+exports.getProductByCategory = async (req, res, next) => {
+  try {
+    const products = await ProductService.getProductByCategory(
+      req.params.category
+    );
+    res.status(200).json({
+      status: 200,
+      data: products,
+      message: 'Successfully Retrieved products by Category.',
+    });
+  } catch (err) {
+     res.status(400).json({ status: 400, message: err.message });
+  }
+};
+
+exports.getProductByName = async (req, res, next) => {
+  try {
+    const products = await ProductService.getProductByName(req.params.name);
+    return res.status(200).json({
+      status: 200,
+      data: products,
+      message: 'Successfully Retrieved products by name.',
+    });
+  } catch (err) {
+    return res.status(400).json({ status: 400, message: err.message });
+  }
+};
+
+exports.getProductByBrand = async (req, res, next) => {
+  try {
+    const products = await ProductService.getProductByBrand(
+      req.params.brand
+    );
+    res.status(200).json({
+      status: 200,
+      data: products,
+      message: 'Successfully Retrieved products by name.',
+    });
+  } catch (err) {
+    res.status(400).json({ status: 400, message: err.message });
   }
 };
