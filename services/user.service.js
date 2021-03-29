@@ -45,3 +45,17 @@ exports.updateUser = async (query, userId) => {
     throw Error(err);
   }
 };
+
+exports.getCustomers = async () => {
+  try {
+    const userData = await User.findAndCountAll({
+      raw: true,
+      where: { role_id: 4 },
+      attributes: { exclude: ['password'] }
+    });
+    delete userData.password;
+    return userData;
+  } catch (err) {
+    throw Error(err);
+  }
+};
