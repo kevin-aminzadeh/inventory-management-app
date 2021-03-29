@@ -1,11 +1,4 @@
-const {
-  Product,
-  Brand,
-  Item,
-  Order,
-  OrderItem,
-  OrderStatus,
-} = require('../models/index');
+const { Product, Order, OrderItem, OrderStatus } = require('../models/index');
 
 exports.getAllOrders = async () => {
   try {
@@ -62,7 +55,6 @@ exports.addOrder = async (param) => {
         product_id: e.product_id,
       });
     });
-    console.log(orderId);
   } catch (err) {
     throw Error(err);
   }
@@ -70,12 +62,19 @@ exports.addOrder = async (param) => {
 
 exports.deleteOrder = async (param) => {
   try {
-    const products = await Order.destroy({
+    const itemData = await OrderItem.destroy({
+      where: {
+        order_id: param,
+      },
+    });
+
+    const order = await Order.destroy({
       where: {
         id: param,
       },
     });
-    return products;
+
+    return order;
   } catch (err) {
     // Log Errors
     throw Error(err);
@@ -84,12 +83,10 @@ exports.deleteOrder = async (param) => {
 
 exports.updateOrder = async (param, data) => {
   try {
-    const products = await Order.update(param, {
-      where: {
-        id: data,
-      },
+    const createOrder = await Order.update(param, { where: { id: data } });
+    param.order_items.forEach((e) => {
+      const orderItem = OrderItem.update(param, { where: { id: data } });
     });
-    return products;
   } catch (err) {
     // Log Errors
     throw Error(err);
