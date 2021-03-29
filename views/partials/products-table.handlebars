@@ -8,10 +8,12 @@
       </tr>
     </thead>
     <tbody>
-      {{> product-row imgUrl="https://picsum.photos/50/50" name="iPhone 12 Pro Max" stockCount=320 total="$29192.00"}}
-      {{> product-row imgUrl="https://picsum.photos/50/50" name="Samsung Galaxy S10+" stockCount=0 total="$29192.00"}}
-      {{> product-row imgUrl="https://picsum.photos/50/50" name="Apple MacBook Pro (2020)" stockCount=3 total="$29192.00"}}
-      {{> product-row imgUrl="https://picsum.photos/50/50" name="Canon EOS 1DX Mark II" stockCount=20 total="$29192.00"}}
+      {{#each products}}
+      {{> product-row imgUrl="{{imgUrl}}" name="{{name}}" stockCount=320 total="$29192.00"}}
+      {{> product-row imgUrl="{{imgUrl}}" name="{{name}}" stockCount=0 total="$29192.00"}}
+      {{> product-row imgUrl="{{imgUrl}}" name="{{name}}" stockCount=3 total="$29192.00"}}
+      {{> product-row imgUrl="{{imgUrl}}" name="{{name}}" stockCount=20 total="$29192.00"}}
+      {{/each}}
     </tbody>
     <tfoot>
       <tr>
