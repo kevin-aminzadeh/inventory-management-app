@@ -5,5 +5,4 @@ ui
 .DS_Store
 *.log
 *.map
-scss
 backup
