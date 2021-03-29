@@ -1,7 +1,12 @@
 const router = require('express').Router();
+const ProductService = require('../../services/product.service');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const x = await ProductService.getProducts();
+  console.log(x);
   res.render('dashboard/products', {
+    Products: x.rows,
+    count: x,
     layout: 'dashboard',
     currentRoute: req.baseUrl,
   });
