@@ -1,11 +1,11 @@
-const OrderService = require('../services/Order.service');
+const OrderService = require('../services/order.service');
 
 exports.getAllOrders = async (req, res, next) => {
   try {
-    const products = await OrderService.searchOrders(req.params.id);
+    const orders = await OrderService.getAllOrders();
     return res.status(200).json({
       status: 200,
-      data: products,
+      data: orders,
       message: 'Successfully Retrieved Order.',
     });
   } catch (err) {
@@ -54,7 +54,7 @@ exports.deleteOrder = async (req, res, next) => {
 
 exports.updateOrder = async (req, res, next) => {
   try {
-    const products = await OrderService.updateOrder(req.body,req.params.id);
+    const products = await OrderService.updateOrder(req.body, req.params.id);
     return res.status(200).json({
       status: 200,
       data: products,
