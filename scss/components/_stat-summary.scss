@@ -1,0 +1,31 @@
+.stat-summary {
+  @extend .row;
+  @extend .pt-0;
+  @extend .pt-lg-2;
+
+  .stat-data {
+    @extend .col;
+    @extend .text-start;
+    @extend .text-nowrap;
+
+    h3 {
+      @extend .text-dark;
+      @extend .fw-bold;
+      @extend .mb-0;
+      font-size: 1.5625rem;
+    }
+
+    p {
+      @extend .fw-bold;
+      font-size: 0.6875rem;
+    }
+  }
+
+  .graph {
+    @extend .col;
+    @extend .pe-0;
+    @extend .ms-auto;
+    @extend .text-lg-end;
+    @extend .text-center;
+  }
+}

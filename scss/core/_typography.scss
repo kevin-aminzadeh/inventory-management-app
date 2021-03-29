@@ -1,0 +1,19 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+h2 {
+  @extend .text-dark;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.stat-heading {
+  @extend .text-dark;
+  font-size: 0.9375rem;
+  opacity: 0.5;
+}

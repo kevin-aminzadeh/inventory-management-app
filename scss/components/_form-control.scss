@@ -1,0 +1,9 @@
+.form-control {
+  @extend .form-control;
+  @extend .border-0;
+  @extend .rounded-0;
+  @extend .bg-transparent;
+  @extend .text-dark;
+  border-bottom: 2px solid #e9e9f0;
+  border-radius: 0 !important;
+}
