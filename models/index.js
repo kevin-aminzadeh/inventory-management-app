@@ -1,18 +1,82 @@
-const UserModel = require('./user.model');
-const RoleModel = require('./role.model');
-const ProductModel = require('./product.model');
-const ProductItemModel = require('./productItem.model');
-const BrandModel = require('./brand.model');
-const CategoryModel = require('./category.model');
+const User = require('./User.model');
+const Role = require('./Role.model');
+const Product = require('./Product.model');
+const Item = require('./Item.model');
+const Brand = require('./Brand.model');
+const Category = require('./Category.model');
+const Order = require('./order.model');
+const OrderItem = require('./orderItem.model');
+const OrderStatus = require('./orderStatus.model');
 
-ProductItemModel.belongsTo(ProductModel, { foreignKey: 'itemID' });
-ProductModel.hasMany(ProductItemModel, { foreignKey: 'itemID' });
-BrandModel.hasMany(ProductModel, { foreignKey: 'brandID' })
+// Describe Category and Product Relationship
+Category.hasMany(Product, {
+  foreignKey: 'category_id',
+  onDelete: 'SET NULL',
+});
+
+Product.belongsTo(Category, {
+  foreignKey: 'category_id',
+});
+
+// Describe Brand and Product Relationship
+Brand.hasMany(Product, {
+  foreignKey: 'brand_id',
+  onDelete: 'SET NULL',
+});
+
+Product.belongsTo(Brand, {
+  foreignKey: 'brand_id',
+});
+
+// Describe Product and Item Relationship
+Product.hasMany(Item, {
+  foreignKey: 'product_id',
+  onDelete: 'CASCADE',
+});
+
+Item.belongsTo(Product, {
+  foreignKey: 'product_id',
+});
+
+// Describe Item and OrderItem Relationship
+OrderItem.belongsTo(Item, {
+  foreignKey: 'item_id',
+});
+
+Item.hasOne(OrderItem, {
+  foreignKey: 'item_id',
+});
+
+OrderItem.belongsTo(Product, {
+  foreignKey: 'item_id',
+});
+
+// Describe Order and OrderItem Relationship
+Order.hasMany(OrderItem, {
+  foreignKey: 'order_id',
+});
+
+OrderItem.belongsTo(Order, {
+  foreignKey: 'order_id',
+});
+
+// Describe Order and OrderStatus Relationship
+Order.belongsTo(OrderStatus, {
+  foreignKey: 'status_id',
+});
+
+OrderStatus.hasMany(Order, {
+  foreignKey: 'status_id',
+})
+
 module.exports = {
-  UserModel,
-  RoleModel,
-  ProductModel,
-  ProductItemModel,
-  BrandModel,
-  CategoryModel,
+  User,
+  Role,
+  Product,
+  Item,
+  Brand,
+  Category,
+  Order,
+  OrderStatus,
+  OrderItem,
 };

@@ -1,10 +1,10 @@
-const { Product, Brand } = require('../models/index');
+const { Product, Category } = require('../models/index');
 
-exports.searchBrands = async (param) => {
+exports.searchCategory = async (param) => {
   try {
-    const products = await Brand.findAll({
+    const products = await Category.findAll({
       where: {
-        name: param,
+        id: param,
       },
       include: {
         model: Product,
@@ -17,9 +17,9 @@ exports.searchBrands = async (param) => {
   }
 };
 
-exports.addBrand = async (param) => {
+exports.addCategory = async (param) => {
   try {
-    const products = await Brand.create(param);
+    const products = await Category.create(param);
     return products;
   } catch (err) {
     // Log Errors
@@ -27,9 +27,9 @@ exports.addBrand = async (param) => {
   }
 };
 
-exports.deleteBrand = async (param) => {
+exports.deleteCategory = async (param) => {
   try {
-    const products = await Brand.destroy({
+    const products = await Category.destroy({
       where: {
         id: param,
       },
@@ -41,9 +41,9 @@ exports.deleteBrand = async (param) => {
   }
 };
 
-exports.updateBrand = async (param, data) => {
+exports.updateCategory = async (param, data) => {
   try {
-    const products = await Brand.update(param, {
+    const products = await Category.update(param, {
       where: {
         id: data,
       },
@@ -54,3 +54,4 @@ exports.updateBrand = async (param, data) => {
     throw Error(err);
   }
 };
+
