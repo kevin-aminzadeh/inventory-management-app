@@ -4,4 +4,6 @@ ui
 .env
 .DS_Store
 *.log
-
+*.map
+scss
+backup
