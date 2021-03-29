@@ -2,11 +2,7 @@ const { ProductModel, ProductItemModel } = require('../models/index');
 
 exports.getProducts = async () => {
   try {
-    const products = await ProductModel.findAll({
-      include: {
-        model: ProductItemModel,
-      },
-    });
+    const products = await ProductModel.findAll();
     return products;
   } catch (err) {
     // Log Errors
