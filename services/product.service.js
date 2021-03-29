@@ -2,8 +2,25 @@ const { Product, Item,Brand ,Category} = require('../models/index');
 
 exports.getProducts = async () => {
   try {
+    const products = await Product.findAndCountAll({
+      raw: true,
+      include: [{ model: Item }],
+    });
+    return products;
+  } catch (err) {
+    // Log Errors
+    throw Error(err);
+  }
+};
 
-    const products = await ProductModel.findAll();
+exports.getProductCount = async (id) => {
+  try {
+    const products = await Item.count({
+      raw: true,
+      where: {
+        product_id: id,
+      },
+    });
     return products;
   } catch (err) {
     // Log Errors

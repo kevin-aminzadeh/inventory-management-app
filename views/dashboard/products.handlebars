@@ -13,8 +13,9 @@
 <div class="row mb-4 px-0">
   <div class="col">
     {{!-- Top Products Component --}}
-    {{#> card heading="250 Products"}}
-      {{> products-table products}}
+    {{#> card heading=count.count}}
+      {{> products-table product=Products}}
+      
     {{/ card}}
   </div>
 

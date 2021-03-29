@@ -2,14 +2,14 @@
   <table class="table table-hover mb-0">
     <thead class="table-light text-muted" >
       <tr>
-        <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;" colspan="2">Product</th>
-        <th scope="col" class="text-center text-uppercase" style="border-bottom: 0 !important;">Availability</th>
-        <th scope="col" class="text-uppercase text-center" style="border-bottom: 0 !important;">Total</th>
+        <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;" colspan="2">ID</th>
+        <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;" colspan="2">Firstname</th>
+        <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;" colspan="2">Email</th>
       </tr>
     </thead>
     <tbody>
-      {{#each product}}
-      {{> product-row imgUrl=imgUrl name=name stockCount=stockCountLevel total=price}}
+      {{#each customers}}
+      {{> customer-row id=id name=name email=email }}
 
       {{/each}}
     </tbody>

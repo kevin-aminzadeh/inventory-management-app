@@ -1,7 +1,11 @@
 const router = require('express').Router();
+const customer = require('../../services/user.service');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const x = await customer.getCustomers();
+ console.log(x);
   res.render('dashboard/customers', {
+    customers: x.rows,
     layout: 'dashboard',
     currentRoute: req.baseUrl,
   });
