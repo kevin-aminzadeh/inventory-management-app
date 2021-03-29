@@ -11,7 +11,7 @@ const orderRoutes = require('./order.routes');
 // Configure API Child Routes
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
-router.use('/product', productRoutes);
+router.use('/products', productRoutes);
 router.use('/brands', brandRoutes);
 router.use('/category', categoryRoutes);
 router.use('/order', orderRoutes);
