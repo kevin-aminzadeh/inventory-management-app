@@ -69,6 +69,15 @@ OrderStatus.hasMany(Order, {
   foreignKey: 'status_id',
 });
 
+// Describe Order and User Relationship
+Order.belongsTo(User, {
+  foreignKey: 'customer_id',
+});
+
+User.hasMany(Order, {
+  foreignKey: 'customer_id',
+});
+
 module.exports = {
   User,
   Role,

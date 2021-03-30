@@ -1,0 +1,15 @@
+.rounded-pill {
+  max-width: 90px;
+  color: rgba($color: #000000, $alpha: 0.5);
+  &.bg-success {
+    background-color: rgba(105, 228, 166, 0.2) !important;
+  }
+
+  &.bg-warning {
+    background-color: rgba($color: #ffca83, $alpha: 0.5);
+  }
+
+  &.bg-danger {
+    background-color: rgba($color: #ff7285, $alpha: 0.5);
+  }
+}

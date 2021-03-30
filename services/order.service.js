@@ -1,8 +1,16 @@
-const { Product, Order, OrderItem, OrderStatus } = require('../models/index');
+const {
+  Product,
+  Order,
+  OrderItem,
+  OrderStatus,
+  User,
+  Item,
+} = require('../models/index');
+const { sequelize } = require('../models/user.model');
 
 exports.getAllOrders = async () => {
   try {
-    const products = await Order.findAll({
+    const responseData = await Order.findAll({
       include: [
         {
           model: OrderItem,
@@ -10,16 +18,60 @@ exports.getAllOrders = async () => {
           required: true,
         },
         {
+          model: User,
+          attributes: ['name', 'email'],
+          required: true,
+        },
+        {
           model: OrderStatus,
         },
       ],
     });
-    return products;
+
+    // Filter Orders Data from Response
+    const orders = responseData.map((product) => product.get({ plain: true }));
+
+    return orders;
   } catch (err) {
     // Log Errors
     throw Error(err);
   }
 };
+
+exports.getOrderById = async (id) => {
+  try {
+    const responseData = await Order.findByPk(id, {
+      include: [
+        {
+          model: OrderItem,
+          include: [
+            {
+              model: Product,
+              attributes: ['name', 'price'],
+            },
+            {
+              model: Item,
+              attributes: ['serial_number'],
+            },
+          ],
+          required: true,
+        },
+        {
+          model: User,
+          attributes: ['name', 'email'],
+          required: true,
+        },
+        {
+          model: OrderStatus,
+        },
+      ],
+    });
+    return responseData.get({ plain: true });
+  } catch (err) {
+    throw Error(err);
+  }
+};
+
 exports.searchOrder = async (params) => {
   try {
     const products = await Order.findByPk(params, {

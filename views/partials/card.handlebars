@@ -1,10 +1,13 @@
-<div class="card {{#if statCard}}stat-card{{/if}}">
+<div class="card {{#if heading}}py-4{{/if}} {{#if statCard}}stat-card{{/if}}">
+{{#if heading}}
   <div class="card-top">
     <div class="col">
       <h2 class="{{headingClass}}">{{heading}}</h2>
     </div>
   </div>
-  <div class="card-content">
+{{/if}}
+
+  <div class="card-content {{#if heading}}mt-4{{/if}}{{#unless heading}}py-4{{/unless}}">
     <div class="col h-100" >
       {{> @partial-block}}
     </div>
