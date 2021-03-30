@@ -1,1 +1,166 @@
-<h1>Orders View</h1>
+<div class="container px-0">
+<div class="row mb-4">
+  <div class="col">
+    <h1>Orders</h1>
+  </div>
+  <div class="col text-end">
+    <button class="btn btn-dark shadow text-nowrap" type="button" data-bs-toggle="modal" data-bs-target="#newOrderModal">
+      <span class="align-middle me-2"><i class="fas fa-plus"></i></span>New Order
+    </button>
+    <div class="modal fade border-0" id="newOrderModal">
+      <div class="modal-dialog modal-dialog-centered border-0 rounded-0">
+        <div class="modal-content border-0 rounded-0 bg-white">
+          <div class="modal-header border-0 rounded-0">
+            <h5 class="modal-title">New Order</h5>
+          </div>
+        <div class="modal-body border-0 rounded-0">
+              <form class="text-center w-100 mx-auto">
+
+                <label for="customerInput" class="sr-only">Customer</label>
+                <input type="search" id="customerInput" class="form-control mb-4" placeholder="Search for a customer..." required="true" data-bs-toggle="dropdown">
+                <ul class="dropdown-menu" aria-labelledby="customerInput" id="customerAutoComplete">
+                  <li class="dropdown-item">Suggestions will appear here as you type.</li>
+                </ul>
+                <label for="productsInput" class="sr-only">Products</label>
+                <input type="search" id="productsInput" class="form-control mt-5 mb-4" placeholder="Add a product..." required="true" data-bs-toggle="dropdown">
+                <ul class="dropdown-menu" aria-labelledby="productsInput" id="productsAutoComplete">
+                  <li class="dropdown-item">Suggestions will appear here as you type.</li>
+                </ul>
+                <div class="row d-flex justify-content-center">
+                  <div class="col-10 col-lg-4 mb-4">
+                    <button class="btn btn-success w-100" type="button">Create Order</button>
+                  </div>
+                  <div class="col-10 col-lg-4 text-nowrap">
+                    <button class="btn btn-outline-danger w-100" type="button">Cancel Order</button>
+                  </div>
+
+
+                </div>
+              </form>
+        </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row mb-4 px-0">
+  <div class="col">
+    {{!-- Top Products Component --}}
+    {{#> card heading=(stringConcat count "Orders")}}
+      <div class="row mb-3 px-3">
+        <div class="col">
+          <h5>0 Order Selected</h5>
+        </div>
+        <div class="col text-end">
+          <button class="btn btn-sm btn-warning"><span class="align-middle me-2"><i class="fas fa-undo"></i></span>Undo</button>
+          <button class="btn btn-sm btn-danger"><span class="align-middle me-2"><i class="fas fa-trash"></i></span>Delete</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover mb-0" id="{{id}}">
+          <thead class="table-light text-muted" >
+            <tr>
+                <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label sr-only" for="flexCheckDefault">
+                      Select Items
+                    </label>
+                  </div>
+                </th>
+                <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;">Order #</th>
+                <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;">Order Date</th>
+                <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;">Customer Name</th>
+                <th scope="col" class="text-uppercase text-center" style="border-bottom: 0 !important;">Status</th>
+                <th scope="col" class="text-uppercase text-center" style="border-bottom: 0 !important;">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data}}
+        
+                <tr id="{{id}}">
+                  <td class="py-3 align-middle" style="border-bottom-color: inherit;">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label sr-only" for="flexCheckDefault">
+                        Select Items
+                      </label>
+                    </div>
+                  </td>
+                  <td style="border-bottom-color: inherit;" class="align-middle ps-3 "><a href="./orders/{{id}}">{{appendLeadingZeroes id}}</a></td>
+                  <td style="border-bottom-color: inherit;" class="align-middle">{{formatDate createdAt}}</td>
+                  <td style="border-bottom-color: inherit;" class="align-middle"><a href="./customers/{{customer_id}}">{{capitalizeString user.name}}</a></td>
+                  <td class=" align-middle text-center" style="border-bottom-color: inherit;"><span class="badge rounded-pill bg-{{getOrderStatusColour orderStatus.name}} py-2 w-50">{{capitalizeString orderStatus.name}}</span></td>
+                  <td class="py-3 align-middle text-center" style="border-bottom-color: inherit;">${{order_total}}</td>
+                </tr>
+            
+
+            {{/each}}
+          </tbody>
+
+        </table>
+      </div>
+      
+    {{/ card}}
+  </div>
+
+</div>
+
+
+</div>
+
+<script>
+  const productsData = {{{toJSON products.rows}}};
+  const customersData = {{{toJSON customers.rows}}};
+
+  const productInput = document.getElementById('productsInput');
+  const productsAutoCompleteEl = document.getElementById('productsAutoComplete');
+
+  const customerInput = document.getElementById('customerInput');
+  const customerAutocompleteEl = document.getElementById('customerAutoComplete');
+
+  productInput.addEventListener('keyup', (e) => {
+    autoComplete(e, productsData, productInput, productsAutoCompleteEl);
+  });
+
+  productsAutoCompleteEl.addEventListener('click', (e) => {
+    productInput.value = e.target.innerText;
+  });
+
+  customerInput.addEventListener('keyup', (e) => {
+    autoComplete(e, customersData, customerInput, customerAutocompleteEl);
+  });
+
+  customerAutocompleteEl.addEventListener('click', (e) => {
+    customerInput.value = e.target.innerText;
+  });
+
+
+  function autoComplete(event, data, input, dropdown) {
+    dropdown.innerHTML = '';
+    
+    if (input.value.length < 2){
+      dropdown.innerHTML = `<li class="dropdown-item">Suggestions will appear here as you type.</li>`
+      return
+    } else {
+      let suggestions = data.filter((item) => {
+        const nameLowerCase = item.name.toLowerCase();
+        const inputLowerCase = input.value.toLowerCase();
+        console.log(nameLowerCase);
+        console.log(inputLowerCase)
+        if(nameLowerCase.includes(inputLowerCase)){
+          return item
+        }
+      })
+      for (const suggestion of suggestions){
+        console.log(suggestion)
+        dropdown.innerHTML += `<li><a class="dropdown-item" href="#">${suggestion.name}</a></li>`
+      }
+      
+    }
+  }
+
+</script>

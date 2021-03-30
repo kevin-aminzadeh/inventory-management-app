@@ -1,0 +1,28 @@
+.table {
+  thead {
+    tr {
+      th {
+        color: #a3a6b4;
+        font-size: 0.6875rem;
+        font-weight: bold;
+        .form-check {
+          margin-bottom: 0 !important;
+          input {
+            margin-left: -16.5px;
+            font-size: 0.8125rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        color: #4d4f5c;
+        font-size: 0.8125rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

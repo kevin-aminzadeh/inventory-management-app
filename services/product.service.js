@@ -1,10 +1,16 @@
-const { Product, Item,Brand ,Category} = require('../models/index');
+const { Product, Item, Brand, Category } = require('../models/index');
 
 exports.getProducts = async () => {
   try {
     const products = await Product.findAndCountAll({
       raw: true,
-      include: [{ model: Item }],
+      include: [
+        {
+          model: Brand,
+          attributes: ['name'],
+          required: true,
+        },
+      ],
     });
     return products;
   } catch (err) {
@@ -84,7 +90,7 @@ exports.updateProduct = async (param, data) => {
 exports.getProductByCategory = async (category) => {
   console.log('running getProductByCategory' + '\n\n\n\n');
   try {
-    const categoryObj= await Category.findOne({
+    const categoryObj = await Category.findOne({
       attributes: ['id'],
       where: { name: category },
     });
@@ -104,8 +110,8 @@ exports.getProductByName = async (productName) => {
   try {
     console.log('running getProductByName' + '\n\n\n\n');
     const products = await Product.findAll({
-      attributes: ['name', "cost_price", "sale_price"],
-      where: { name: productName }
+      attributes: ['name', 'cost_price', 'sale_price'],
+      where: { name: productName },
     });
     return products;
   } catch (err) {
@@ -122,15 +128,14 @@ exports.getProductByBrand = async (brandName) => {
       where: { name: brandName },
     });
 
-    console.log("brandId: " + brandobj.id)
+    console.log('brandId: ' + brandobj.id);
 
     const products = await Product.findAll({
-      attributes: ['name', "cost_price", "sale_price"],
-      where: { brand_i_d: brandobj.id }
+      attributes: ['name', 'cost_price', 'sale_price'],
+      where: { brand_i_d: brandobj.id },
     });
 
     return products;
-    
   } catch (err) {
     // Log Errors
     throw Error(err);

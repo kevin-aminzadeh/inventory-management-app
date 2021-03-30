@@ -1,6 +1,8 @@
 .form-control {
   @extend .form-control;
-  @extend .border-0;
+  @extend .border-top-0;
+  @extend .border-start-0;
+  @extend .border-end-0;
   @extend .rounded-0;
   @extend .bg-transparent;
   @extend .text-dark;
