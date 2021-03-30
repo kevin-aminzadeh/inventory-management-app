@@ -6465,7 +6465,7 @@ textarea.form-control-lg {
   border: 1px solid #dee2e6 !important;
 }
 
-.border-0, .notification-bell ul, .form-control, .card .card-top, .stat-card .card-top, .card, .stat-card {
+.border-0, .notification-bell ul, .card .card-top, .stat-card .card-top, .card, .stat-card {
   border: 0 !important;
 }
 
@@ -6473,7 +6473,7 @@ textarea.form-control-lg {
   border-top: 1px solid #dee2e6 !important;
 }
 
-.border-top-0 {
+.border-top-0, .form-control {
   border-top: 0 !important;
 }
 
@@ -6481,7 +6481,7 @@ textarea.form-control-lg {
   border-right: 1px solid #dee2e6 !important;
 }
 
-.border-end-0 {
+.border-end-0, .form-control {
   border-right: 0 !important;
 }
 
@@ -6497,7 +6497,7 @@ textarea.form-control-lg {
   border-left: 1px solid #dee2e6 !important;
 }
 
-.border-start-0 {
+.border-start-0, .form-control {
   border-left: 0 !important;
 }
 
@@ -6931,7 +6931,7 @@ textarea.form-control-lg {
   margin-top: 1rem !important;
 }
 
-.mt-4, .card .card-content, .stat-card .card-content {
+.mt-4 {
   margin-top: 1.5rem !important;
 }
 
@@ -7101,7 +7101,7 @@ textarea.form-control-lg {
   padding-bottom: 1rem !important;
 }
 
-.py-4, .card, .stat-card {
+.py-4 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
 }
@@ -11002,6 +11002,38 @@ h2, .h2, .sidebar .sidebar-top .sidebar-header h1, .sidebar .sidebar-top .sideba
 }
 .stat-summary .stat-data p {
   font-size: 0.6875rem;
+}
+.table thead tr th {
+  color: #a3a6b4;
+  font-size: 0.6875rem;
+  font-weight: bold;
+}
+.table thead tr th .form-check {
+  margin-bottom: 0 !important;
+}
+.table thead tr th .form-check input {
+  margin-left: -16.5px;
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+.table tbody tr td {
+  color: #4d4f5c;
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.rounded-pill {
+  max-width: 90px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.rounded-pill.bg-success {
+  background-color: rgba(105, 228, 166, 0.2) !important;
+}
+.rounded-pill.bg-warning {
+  background-color: rgba(255, 202, 131, 0.5);
+}
+.rounded-pill.bg-danger {
+  background-color: rgba(255, 114, 133, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */

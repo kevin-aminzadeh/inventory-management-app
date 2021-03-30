@@ -6,7 +6,20 @@ exports.getAllOrders = async (req, res, next) => {
     return res.status(200).json({
       status: 200,
       data: orders,
-      message: 'Successfully Retrieved Order.',
+      message: 'Successfully Retrieved Orders.',
+    });
+  } catch (err) {
+    return res.status(400).json({ status: 400, message: err.message });
+  }
+};
+
+exports.getOrderById = async (req, res, next) => {
+  try {
+    const order = await OrderService.getOrderById(req.params.id);
+    return res.status(200).json({
+      status: 200,
+      data: order,
+      message: 'Successfully Retrieved Order',
     });
   } catch (err) {
     return res.status(400).json({ status: 400, message: err.message });

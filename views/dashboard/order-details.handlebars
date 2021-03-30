@@ -1,1 +1,109 @@
-<h1>Order Details View</h1>
+<div class="container px-0">
+
+<div class="row mb-4">
+  <div class="col">
+    <h1>Order Number: #{{appendLeadingZeroes order.id}}</h1>
+  </div>
+  {{#if (orderIsPending order.orderStatus.name)}}
+    <div class="col text-end">
+      <button class="btn btn-danger shadow text-nowrap h-100" >
+        <span class="align-middle me-2"><i class="fas fa-ban"></i></span>Cancel Order
+      </button>
+      <button class="btn btn-success shadow text-nowrap h-100" >
+        Mark As Shipped
+      </button>
+    </div>
+  {{/if}}
+
+</div>
+
+<div class="row mb-4 px-0">
+  <div class="col">
+    {{!-- Order Summary Component --}}
+    {{#> card }}
+    <div class="row">
+      <div class="col">
+        <h2 class="h5">Order Summary</h2>
+      </div>
+      <div class="col text-end">
+        <div class="status">
+          <span class="badge rounded-pill bg-{{getOrderStatusColour order.orderStatus.name}} py-2 w-50">{{capitalizeString order.orderStatus.name}}</span>
+        </div>
+      </div>
+    </div>
+      <div class="row mt-4">
+        <div class="col">
+          <p class="h5">Customer Details</p>
+          <p class="mb-0 ps-1">{{order.user.name}}</p>
+          <a class="ps-1 text-decoration-none" href="mailto:{{order.user.email}}">{{order.user.email}}</a></br>
+          <a class="ps-1 text-decoration-none" href="tel:+61412345678">+61412345678</a>
+        </div>
+      <div class="col d-flex flex-column text-end pe-4 justify-content-end">
+        <h3 class="h5 fw-normal">Order Total: <span class="fw-bold">${{order.order_total}}</span></h3>
+      </div>
+      </div>
+    {{/ card}}
+  </div>
+</div>
+
+<div class="row mb-4 px-0">
+  <div class="col">
+    {{!-- Order Items Component --}}
+    {{#> card heading="Order Items"}}
+      <div class="row mb-3 px-3">
+        <div class="col">
+          <h5>0 Item Selected</h5>
+        </div>
+        <div class="col text-end">
+          <button class="btn btn-sm btn-warning"><span class="align-middle me-2"><i class="fas fa-undo"></i></span>Undo</button>
+          <button class="btn btn-sm btn-danger"><span class="align-middle me-2"><i class="fas fa-trash"></i></span>Delete</button>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover mb-0" id="{{id}}">
+          <thead class="table-light text-muted" >
+            <tr>
+                <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;">
+                  <div class="form-check align-middle ">
+                    <input class="form-check-input align-middle text-center" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label sr-only" for="flexCheckDefault">
+                      Select Items
+                    </label>
+                  </div>
+                </th>
+                <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;">Serial Number</th>
+                <th scope="col" class="text-uppercase" style="border-bottom: 0 !important;">Product Name</th>
+                <th scope="col" class="text-uppercase text-center" style="border-bottom: 0 !important;">Price</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {{#each order.orderItems}}
+               
+                <tr>
+                  <td class="py-3 align-middle" style="border-bottom-color: inherit;">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label sr-only" for="flexCheckDefault">
+                        Select Items
+                      </label>
+                    </div>
+                  </td>
+                  <td style="border-bottom-color: inherit;" class="align-middle">{{item.serial_number}}</td>
+                  <td style="border-bottom-color: inherit;" class="align-middle">{{capitalizeString product.name}}</td>
+                  <td class="py-3 align-middle text-center" style="border-bottom-color: inherit;">${{product.price}}</td>
+                </tr>
+            
+
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+    {{/ card}}
+  </div>
+
+</div>
+
+
+</div>

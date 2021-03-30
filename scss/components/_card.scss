@@ -1,7 +1,6 @@
 .card {
   @extend .container;
   @extend .px-3;
-  @extend .py-4;
   @extend .bg-white;
   @extend .shadow-sm;
   @extend .h-100;
@@ -19,7 +18,6 @@
   .card-content {
     @extend .row;
     @extend .justify-content-center;
-    @extend .mt-4;
     @extend .h-100;
   }
 }
