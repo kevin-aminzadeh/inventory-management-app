@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const customer = require('../../services/user.service');
+const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   const x = await customer.getCustomers();
- console.log(x);
+  console.log(x);
   res.render('dashboard/customers', {
     customers: x.rows,
     layout: 'dashboard',
