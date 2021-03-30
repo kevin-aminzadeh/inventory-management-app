@@ -5,9 +5,10 @@ const productRoutes = require('./product.routes');
 const orderRoutes = require('./order.routes');
 const customerRoutes = require('./customer.routes');
 const settingsRoutes = require('./settings.routes');
+const withAuth = require('../../utils/auth');
 
 // Configure Dashboard Child Routes
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   res.render('dashboard/home', {
     layout: 'dashboard',
     currentRoute: req.baseUrl,
