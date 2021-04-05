@@ -8,14 +8,14 @@ This app is used in management to see the placed orders of the customers and col
 Here are some photos of the deployed project:
 
 This photo shows the list of products available in the website
-![products](./images/products.png)
+![products](./public/assets/images/products.png)
 
 This photo shows the orders that have been placed and the details of the order that has been made.
-![orders](./images/orderlist.png)
-![order-details](./images/orderdetails.png)
+![orders](./public/assets/images/orderlist.png)
+![order-details](./public/assets/images/orderdetails.png)
 
 This shows the list of customers who signed up in the website
-![customers](./images/customers.png)
+![customers](./public/assets/images/customers.png)
 
 To view the deployed website of this project you can view it [here](https://ivy-inventory-management.herokuapp.com/).
 # Table Of Contents
