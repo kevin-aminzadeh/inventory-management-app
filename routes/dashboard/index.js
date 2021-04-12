@@ -7,12 +7,34 @@ const customerRoutes = require('./customer.routes');
 const settingsRoutes = require('./settings.routes');
 const { User } = require('../../models');
 
+
 // Configure Dashboard Child Routes
 router.get('/', (req, res) => {
   res.render('dashboard/home', {
     layout: 'dashboard',
     currentRoute: req.baseUrl,
   });
+});
+
+// SignUp Route
+router.get('/signup', (req,res) => {
+  res.render('dashboard/signup', {
+    layout:false,
+  });
+});
+
+router.post('/signup', async (req, res) => {
+  try{
+    const newUser = await User.create(req.body);
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(newUser);
+    });
+  }catch(err){
+    res.status(400).json(err);
+  }
 });
 
 // Login Route
